@@ -39,10 +39,17 @@ class USVehicleFactory(VehicleFactory):
         return Car(f"{make} {model} USA", model)
     def create_motorcycle(self, make:str, model:str)-> Vehicle:
         return Motorcycle(f"{make} {model} USA", model)
+    
+class EUVehicleFactory(VehicleFactory):
+    def create_car(self, make:str, model:str)-> Vehicle:
+        return Car(f"{make} {model} EU", model)
+    def create_motorcycle(self, make:str, model:str)-> Vehicle:
+        return Motorcycle(f"{make} {model} EU", model)
  
 # Використання
-vehicle1 = Car("Toyota", "Corolla")
-vehicle1.start_engine()
-
-vehicle2 = Motorcycle("Harley-Davidson", "Sportster")
-vehicle2.start_engine()
+factory = USVehicleFactory()
+car1 = factory.create_car("Ford", "Mustang")
+car1.start_engine()
+factory = EUVehicleFactory()
+motorcycle1 = factory.create_car("BMW", "R12")
+motorcycle1.start_engine()
