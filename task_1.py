@@ -35,8 +35,6 @@ class Motorcycle(Vehicle):
         logging.info(f"{self.make} {self.model}: Мотор заведено")
 
 
-
-# USVehicleFactory та EUVehicleFactory
 class USVehicleFactory(VehicleFactory):
     def create_car(self, make:str, model:str)-> Vehicle:
         return Car(f"{make} {model} USA", model)
