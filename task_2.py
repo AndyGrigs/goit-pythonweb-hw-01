@@ -1,7 +1,6 @@
-import logging
 from abc import ABC, abstractmethod
+from logger import logging
 
-logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 class Book:
     def __init__(self, title: str, author: str, year: str):
